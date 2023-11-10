@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Replace 'your_url_here' with the actual URL of the webpage you want to scrape
-url = 'your_url_here'
+url = 'uexternado.edu.co'
 
 # Send a GET request to the URL
 response = requests.get(url)
