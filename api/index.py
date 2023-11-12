@@ -115,6 +115,26 @@ pattern = re.compile(r'(NOTIFICACIÓN POR ESTADO No\. \d+ DEL \w+ \d+ DE [A-Z]+ 
 match = pattern.search(original_pdf_text)
 
 if match:
-    print(f"\nThe first line matching the pattern is:\n{match.group(1)}")
+    estado_info = match.group(1)
+
+    # Extracting information using regex
+    match_info = re.match(r'NOTIFICACIÓN POR ESTADO No\. (\d+) DEL (\w+) (\d+) DE ([A-Z]+) DE (\d+)', estado_info, re.IGNORECASE)
+
+    if match_info:
+        Estado_ID = match_info.group(1)
+        DAY = match_info.group(3)
+        
+        # Mapping month names to numerical values
+        month_names = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']
+        MONTH = str(month_names.index(match_info.group(4)) + 1)  # Adding 1 to convert 0-based index to 1-based index
+
+        YEAR = match_info.group(5)
+
+        print(f"\nEstado_ID: {Estado_ID}")
+        print(f"DAY: {DAY}")
+        print(f"MONTH: {MONTH}")
+        print(f"YEAR: {YEAR}")
+    else:
+        print("Failed to extract information from the matched line.")
 else:
     print("No matching line found in the entire PDF.")
