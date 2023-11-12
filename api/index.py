@@ -153,7 +153,7 @@ try:
                                   host='juansebastianlopez.com', database='jslo_cgr')
     cursor = cnx.cursor()
 
-    # Create the table if it doesn't exist
+    # Crear tabla si no existe
     create_table_query = (
         "CREATE TABLE IF NOT EXISTS NovedadesCGR ("
         "  id INT AUTO_INCREMENT PRIMARY KEY,"
@@ -168,20 +168,20 @@ try:
 
     cursor.execute(create_table_query)
 
-    # Your MySQL table schema might look different, adjust accordingly
+    # Query para insertar
     insert_query = ("INSERT INTO NovedadesCGR "
                     "(Estado_ID, DAY, MONTH, YEAR, Novedades, Link) "
                     "VALUES (%s, %s, %s, %s, %s, %s)")
 
-    # Check if Estado_ID already exists in the database
+    # Chequear si Estado_ID ya exista en la base de datos
     check_query = ("SELECT COUNT(*) FROM NovedadesCGR WHERE Estado_ID = %s")
     cursor.execute(check_query, (Estado_ID,))
     result = cursor.fetchone()
 
     if result and result[0] > 0:
-        print(f"This Estado_ID ({Estado_ID}) already exists in the database. No data inserted.")
+        print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos. No data inserted.")
     else:
-        # Insert data into the MySQL table
+        # Insertar data en MySQL table
         data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2)
         cursor.execute(insert_query, data)
         cnx.commit()
