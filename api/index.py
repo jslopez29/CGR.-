@@ -56,6 +56,9 @@ if response.status_code == 200:
                 
                 # Print a custom title
                 print("\nLos procesos que reportan novedad en el Estado más reciente son:")
+                
+                # Initialize Novedades variable outside the loop
+                Novedades = ""
 
                 # Iterate through tables and print specific content
                 for idx, table in enumerate(tables):
@@ -82,13 +85,13 @@ if response.status_code == 200:
                     # Remove lines containing "IDENTIFICACIÓN"
                     condensed_content = '\n'.join(line for line in condensed_content.split('\n') if 'IDENTIFICACIÓN' not in line)
 
-                    # Print the condensed content for the current table
+                    # Accumulate the condensed content for the current table into Novedades
                     if condensed_content:
                         # Remove spaces but keep line breaks
                         condensed_content = condensed_content.replace(' ', '').strip()
-                        print(condensed_content)
+                        Novedades += condensed_content + "\n"
                     else:
-                        print("No relevant entries found.")
+                        Novedades += "No relevant entries found.\n"
                 # Now, you can open this link using a web browser or perform further actions
             else:
                 print("No se pudo encontrar el link de Descarga del Estado. Particularmente no aparece la palabra 'Descargar'.")
@@ -130,11 +133,71 @@ if match:
 
         YEAR = match_info.group(5)
 
-        print(f"\nEstado_ID: {Estado_ID}")
-        print(f"DAY: {DAY}")
-        print(f"MONTH: {MONTH}")
-        print(f"YEAR: {YEAR}")
+        
     else:
         print("Failed to extract information from the matched line.")
 else:
     print("No matching line found in the entire PDF.")
+
+print(f"Las variables que he guardado hasta el momento son:")
+print(f"\nEstado_ID: {Estado_ID}")
+print(f"DAY: {DAY}")
+print(f"MONTH: {MONTH}")
+print(f"YEAR: {YEAR}")
+print(f"\nNovedades:\n{Novedades}")
+
+# Establish a connection to the MySQL server
+try:
+    cnx = mysql.connector.connect(user='jslo_cgrhost', password='&$r6W6&qGnMG',
+                                  host='juansebastianlopez.com', database='jslo_cgr')
+    cursor = cnx.cursor()
+
+    # Create the table if it doesn't exist
+    create_table_query = (
+        "CREATE TABLE IF NOT EXISTS NovedadesCGR ("
+        "  id INT AUTO_INCREMENT PRIMARY KEY,"
+        "  Estado_ID INT,"
+        "  DAY INT,"
+        "  MONTH INT,"
+        "  YEAR INT,"
+        "  Novedades TEXT,"
+        "  Link VARCHAR(255)"
+        ")"
+    )
+
+    cursor.execute(create_table_query)
+
+    # Your MySQL table schema might look different, adjust accordingly
+    insert_query = ("INSERT INTO NovedadesCGR "
+                    "(Estado_ID, DAY, MONTH, YEAR, Novedades, Link) "
+                    "VALUES (%s, %s, %s, %s, %s, %s)")
+
+    # Check if Estado_ID already exists in the database
+    check_query = ("SELECT COUNT(*) FROM NovedadesCGR WHERE Estado_ID = %s")
+    cursor.execute(check_query, (Estado_ID,))
+    result = cursor.fetchone()
+
+    if result and result[0] > 0:
+        print(f"This Estado_ID ({Estado_ID}) already exists in the database. No data inserted.")
+    else:
+        # Insert data into the MySQL table
+        data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2)
+        cursor.execute(insert_query, data)
+        cnx.commit()
+        print("Data inserted into MySQL successfully.")
+
+
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Something is wrong with your user name or password.")
+    elif err.errno == errorcode.ER_BAD_DB_ERROR:
+        print("Database does not exist.")
+    else:
+        print(err)
+
+finally:
+    # Close the cursor and connection
+    if 'cursor' in locals() and cursor:
+        cursor.close()
+    if 'cnx' in locals() and cnx.is_connected():
+        cnx.close()
