@@ -2,6 +2,11 @@ import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import camelot
+import re
+import fitz
+import mysql.connector
+from mysql.connector import errorcode
+
 
 # Replace 'your_url_here' with the actual URL of the webpage you want to scrape
 url = 'https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias'
@@ -48,7 +53,7 @@ if response.status_code == 200:
 
                 # Now, use camelot to extract tables from the PDF
                 tables = camelot.read_pdf("downloaded_file.pdf", flavor='stream', pages='all')
-               
+                
                 # Print a custom title
                 print("\nLos procesos que reportan novedad en el Estado más reciente son:")
 
@@ -84,10 +89,7 @@ if response.status_code == 200:
                         print(condensed_content)
                     else:
                         print("No relevant entries found.")
-
-
                 # Now, you can open this link using a web browser or perform further actions
-
             else:
                 print("No se pudo encontrar el link de Descarga del Estado. Particularmente no aparece la palabra 'Descargar'.")
 
@@ -99,3 +101,20 @@ if response.status_code == 200:
 
 else:
     print(f"Fue imposible abrir el link de la página web. Status code: {response.status_code}")
+# Open the PDF using PyMuPDF
+pdf_document = fitz.open("downloaded_file.pdf")
+
+# Extract the first line containing the word "ESTADO" from the entire PDF
+original_pdf_text = ""
+for page_number in range(pdf_document.page_count):
+    page = pdf_document[page_number]
+    original_pdf_text += page.get_text()
+
+pattern = re.compile(r'(NOTIFICACIÓN POR ESTADO No\. \d+ DEL \w+ \d+ DE [A-Z]+ DE \d{4})', re.IGNORECASE)
+
+match = pattern.search(original_pdf_text)
+
+if match:
+    print(f"\nThe first line matching the pattern is:\n{match.group(1)}")
+else:
+    print("No matching line found in the entire PDF.")
