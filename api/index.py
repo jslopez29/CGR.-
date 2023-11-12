@@ -215,6 +215,4 @@ logging.info("MONTH: %s", MONTH)
 logging.info("YEAR: %s", YEAR)
 logging.info("Novedades:\n%s", Novedades)
 logging.info("Data inserted into MySQL successfully.")
-except mysql.connector.Error as err:
-    logging.error("An error occurred: %s", err)
 logging.info("Script completed successfully.")
