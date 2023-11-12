@@ -1,3 +1,4 @@
+import logging
 import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
@@ -201,3 +202,19 @@ finally:
         cursor.close()
     if 'cnx' in locals() and cnx.is_connected():
         cnx.close()
+
+
+# Configure the logging module
+logging.basicConfig(filename='script_log.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.info("El Estado más reciente es el siguiente: %s", newest_link)
+logging.info("El link de descarga del Estado más reciente es este: %s", newest_link2)
+logging.info("Los procesos que reportan novedad en el Estado más reciente son:")
+logging.info("Estado_ID: %s", Estado_ID)
+logging.info("DAY: %s", DAY)
+logging.info("MONTH: %s", MONTH)
+logging.info("YEAR: %s", YEAR)
+logging.info("Novedades:\n%s", Novedades)
+logging.info("Data inserted into MySQL successfully.")
+except mysql.connector.Error as err:
+    logging.error("An error occurred: %s", err)
+logging.info("Script completed successfully.")
