@@ -56,7 +56,8 @@ if response.status_code == 200:
                 # Save the PDF content to a file
                 with open('regalias.pdf', 'wb') as pdf_file:
                     pdf_file.write(pdf_response.content)
-
+                # Print the path to check if the file is saved correctly
+                print("PDF file saved to:", 'regalias.pdf')
                 # Open the saved PDF file with pdfplumber
                 with pdfplumber.open('regalias.pdf') as pdf:
                     # Initialize an empty list to store entries from all pages

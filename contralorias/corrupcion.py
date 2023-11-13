@@ -51,6 +51,13 @@ if response.status_code == 200:
                 print("\nEl link de descarga del Estado más reciente es este:", newest_link2_corrupcion)
                 # Download the PDF file
                 pdf_response = requests.get(newest_link2_corrupcion, headers=HEADERS)
+                with open('corrupcion.pdf', 'wb') as pdf_file:
+                    pdf_file.write(pdf_response.content)
+
+                # Print the path to check if the file is saved correctly
+                print("PDF file saved to:", 'corrupcion.pdf')
+
+                # Open the PDF using pdfplumber
                 with pdfplumber.open('corrupcion.pdf') as pdf:
                     # Initialize an empty list to store entries from all pages
                     all_entries = []
