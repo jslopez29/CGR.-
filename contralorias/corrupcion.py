@@ -52,6 +52,9 @@ if response.status_code == 200:
                 # Download the PDF file
                 pdf_response = requests.get(newest_link2, headers=HEADERS)
                 with pdfplumber.open('corrupcion.pdf') as pdf:
+                    # Initialize an empty list to store entries from all pages
+                    all_entries = []
+
                     # Iterate through all pages
                     for page_number in range(len(pdf.pages)):
                         # Extract the table from the current page
@@ -62,12 +65,15 @@ if response.status_code == 200:
                         column_index = 1
                         column_data = [row[column_index].replace('\n', '') for row in table if row and row[column_index] and row[column_index].startswith("P")]
 
-                        # Concatenate the entries and save as a variable
-                        Novedades = "\n".join(column_data)
+                        # Add the entries from the current page to the list
+                        all_entries.extend(column_data)
 
-                # Now you can use the variable "Novedades" for further processing
+                    # Concatenate all entries and save as a variable
+                    Novedades_Corrupcion = "\n".join(all_entries)
+
+                # Now you can use the variable "Novedades_Corrupcion" for further processing
                 print("Concatenated Entries:")
-                print(Novedades)
+                print(Novedades_Corrupcion)
 
             else:
                 print("No se pudo encontrar el link de Descarga del Estado. Particularmente no aparece la palabra 'Descargar'.")
@@ -123,7 +129,7 @@ print(f"\nEstado_ID: {Estado_ID}")
 print(f"DAY: {DAY}")
 print(f"MONTH: {MONTH}")
 print(f"YEAR: {YEAR}")
-print(f"\nNovedades:\n{Novedades}")
+print(f"\nNovedades:\n{Novedades_Corrupcion}")
 print(f"\nContraloría:\n{CONTRALORIA}")
 
 # Establish a connection to the MySQL server
@@ -162,7 +168,7 @@ try:
         print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos con la misma CONTRALORIA. No data inserted.")
     else:
         # Insertar data en MySQL table
-        data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2, CONTRALORIA)
+        data = (Estado_ID, DAY, MONTH, YEAR, Novedades_Corrupcion, newest_link2, CONTRALORIA)
         cursor.execute(insert_query, data)
         cnx.commit()
         print("Data inserted into MySQL successfully.")
@@ -193,7 +199,7 @@ logging.info("Estado_ID: %s", Estado_ID)
 logging.info("DAY: %s", DAY)
 logging.info("MONTH: %s", MONTH)
 logging.info("YEAR: %s", YEAR)
-logging.info("Novedades:\n%s", Novedades)
+logging.info("Novedades:\n%s", Novedades_Corrupcion)
 logging.info("Contraloría:\n%s", CONTRALORIA)
 logging.info("Data inserted into MySQL successfully.")
 logging.info("Script completed successfully.")

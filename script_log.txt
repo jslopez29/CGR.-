@@ -242,3 +242,149 @@ PRF-88112-2019-35131
 1
 2023-11-12 16:43:28,568 - INFO - Data inserted into MySQL successfully.
 2023-11-12 16:43:28,568 - INFO - Script completed successfully.
+2023-11-12 21:10:53,018 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:10:53,018 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:10:53,019 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:10:53,019 - INFO - Estado_ID: 205
+2023-11-12 21:10:53,019 - INFO - DAY: 10
+2023-11-12 21:10:53,019 - INFO - MONTH: 11
+2023-11-12 21:10:53,019 - INFO - YEAR: 2023
+2023-11-12 21:10:53,019 - INFO - Novedades:
+PRF-2019-01147_UCC-PRF-015-2019
+PRF-88112-2019-35131
+2023-11-12 21:10:53,019 - INFO - Contraloría:
+1
+2023-11-12 21:10:53,019 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:10:53,019 - INFO - Script completed successfully.
+2023-11-12 21:27:08,750 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:27:08,750 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:27:08,750 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:27:08,750 - INFO - Estado_ID: 205
+2023-11-12 21:27:08,750 - INFO - DAY: 10
+2023-11-12 21:27:08,750 - INFO - MONTH: 11
+2023-11-12 21:27:08,751 - INFO - YEAR: 2023
+2023-11-12 21:27:08,751 - INFO - Novedades:
+PRF-2019-01147_UCC-PRF-015-2019
+PRF-88112-2019-35131
+2023-11-12 21:27:08,751 - INFO - Contraloría:
+1
+2023-11-12 21:27:08,751 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:27:08,751 - INFO - Script completed successfully.
+2023-11-12 21:29:43,146 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:29:43,147 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:29:43,148 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:29:43,148 - INFO - Estado_ID: 205
+2023-11-12 21:29:43,148 - INFO - DAY: 10
+2023-11-12 21:29:43,149 - INFO - MONTH: 11
+2023-11-12 21:29:43,149 - INFO - YEAR: 2023
+2023-11-12 21:29:43,149 - INFO - Novedades:
+PRF-2019-01147_UCC-PRF-015-2019
+PRF-88112-2019-35131
+2023-11-12 21:29:43,150 - INFO - Contraloría:
+1
+2023-11-12 21:29:43,151 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:29:43,151 - INFO - Script completed successfully.
+2023-11-12 21:30:02,635 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:30:02,635 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:30:02,635 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:30:02,635 - INFO - Estado_ID: 177
+2023-11-12 21:30:02,635 - INFO - DAY: 10
+2023-11-12 21:30:02,635 - INFO - MONTH: 11
+2023-11-12 21:30:02,635 - INFO - YEAR: 2023
+2023-11-12 21:30:02,636 - INFO - Novedades:
+URFR-PRF-111-2019
+URFR-PRF-077-2019
+PRF-801112-2020-36928
+PRF-2019-00135
+2023-11-12 21:30:02,636 - INFO - Contraloría:
+2
+2023-11-12 21:30:02,636 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:30:02,636 - INFO - Script completed successfully.
+2023-11-12 21:30:41,760 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:30:41,761 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:30:41,761 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:30:41,761 - INFO - Estado_ID: 177
+2023-11-12 21:30:41,761 - INFO - DAY: 10
+2023-11-12 21:30:41,761 - INFO - MONTH: 11
+2023-11-12 21:30:41,761 - INFO - YEAR: 2023
+2023-11-12 21:30:41,761 - INFO - Novedades:
+URFR-PRF-111-2019
+URFR-PRF-077-2019
+PRF-801112-2020-36928
+PRF-2019-00135
+2023-11-12 21:30:41,761 - INFO - Contraloría:
+2
+2023-11-12 21:30:41,761 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:30:41,761 - INFO - Script completed successfully.
+2023-11-12 21:35:27,510 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:35:27,510 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:35:27,510 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:35:27,510 - INFO - Estado_ID: 177
+2023-11-12 21:35:27,510 - INFO - DAY: 10
+2023-11-12 21:35:27,510 - INFO - MONTH: 11
+2023-11-12 21:35:27,510 - INFO - YEAR: 2023
+2023-11-12 21:35:27,510 - INFO - Novedades:
+PRF-801112-2019-35630
+PRF-801112-2020-37019
+URFR-PRF-004-2020
+PRF-80503-2018-32820
+PRF- 801112-2021-41058
+URFR-PRF-109-2019
+URFR-PRF-111-2019
+URFR-PRF-077-2019
+PRF-801112-2020-36928
+PRF-2019-00135
+2023-11-12 21:35:27,511 - INFO - Contraloría:
+2
+2023-11-12 21:35:27,511 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:35:27,511 - INFO - Script completed successfully.
+2023-11-12 21:37:44,065 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:37:44,065 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:37:44,065 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:37:44,065 - INFO - Estado_ID: 205
+2023-11-12 21:37:44,065 - INFO - DAY: 10
+2023-11-12 21:37:44,066 - INFO - MONTH: 11
+2023-11-12 21:37:44,066 - INFO - YEAR: 2023
+2023-11-12 21:37:44,066 - INFO - Novedades:
+PRF-2019-01147_UCC-PRF-015-2019
+PRF-88112-2019-35131
+2023-11-12 21:37:44,066 - INFO - Contraloría:
+1
+2023-11-12 21:37:44,066 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:37:44,066 - INFO - Script completed successfully.
+2023-11-12 21:38:06,906 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:38:06,907 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:38:06,908 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:38:06,908 - INFO - Estado_ID: 205
+2023-11-12 21:38:06,908 - INFO - DAY: 10
+2023-11-12 21:38:06,908 - INFO - MONTH: 11
+2023-11-12 21:38:06,908 - INFO - YEAR: 2023
+2023-11-12 21:38:06,908 - INFO - Novedades:
+PRF-2019-01147_UCC-PRF-015-2019
+PRF-88112-2019-35131
+2023-11-12 21:38:06,908 - INFO - Contraloría:
+1
+2023-11-12 21:38:06,908 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:38:06,910 - INFO - Script completed successfully.
+2023-11-12 21:38:12,468 - INFO - El Estado más reciente es el siguiente: https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias/-/asset_publisher/smuh/content/estado-177-de-10-de-noviembre-de-2023__gitvcfrsgr/3742614?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId=5354272&_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_redirect=https%3A%2F%2Fwww.contraloria.gov.co%2Fresultados%2Fnotificaciones-y-citaciones%2Fnotificaciones-por-estado%2Funidad-de-responsabilidad-fiscal-de-regalias%3Fp_p_id%3Dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_cur%3D0%26p_r_p_resetCur%3Dfalse%26_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_smuh_assetEntryId%3D5354272
+2023-11-12 21:38:12,468 - INFO - El link de descarga del Estado más reciente es este: https://www.contraloria.gov.co/documents/3742614/4681313/ESTADO+177+de+10+de+noviembre+de+2023__GITVCFRSGR.pdf/32c50435-95c4-e87a-f533-4ed6bf966284?t=1699619881768
+2023-11-12 21:38:12,468 - INFO - Los procesos que reportan novedad en el Estado más reciente son:
+2023-11-12 21:38:12,468 - INFO - Estado_ID: 177
+2023-11-12 21:38:12,468 - INFO - DAY: 10
+2023-11-12 21:38:12,468 - INFO - MONTH: 11
+2023-11-12 21:38:12,469 - INFO - YEAR: 2023
+2023-11-12 21:38:12,469 - INFO - Novedades:
+PRF-801112-2019-35630
+PRF-801112-2020-37019
+URFR-PRF-004-2020
+PRF-80503-2018-32820
+PRF- 801112-2021-41058
+URFR-PRF-109-2019
+URFR-PRF-111-2019
+URFR-PRF-077-2019
+PRF-801112-2020-36928
+PRF-2019-00135
+2023-11-12 21:38:12,469 - INFO - Contraloría:
+2
+2023-11-12 21:38:12,469 - INFO - Data inserted into MySQL successfully.
+2023-11-12 21:38:12,469 - INFO - Script completed successfully.

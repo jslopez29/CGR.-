@@ -59,6 +59,9 @@ if response.status_code == 200:
 
                 # Open the saved PDF file with pdfplumber
                 with pdfplumber.open('regalias.pdf') as pdf:
+                    # Initialize an empty list to store entries from all pages
+                    all_entries = []
+
                     # Iterate through all pages
                     for page_number in range(len(pdf.pages)):
                         # Extract the table from the current page
@@ -67,15 +70,17 @@ if response.status_code == 200:
 
                         # Extract a specific column (modify column_index as needed)
                         column_index = 1
-                        column_data = [row[column_index].replace('\n', '') for row in table if row and row[column_index] and row[column_index].startswith("P")]
+                        column_data = [row[column_index].replace('\n', '') for row in table if row and row[column_index] and (row[column_index].startswith("P") or row[column_index].startswith("U"))]
 
-                        # Concatenate the entries and save as a variable
-                        Novedades = "\n".join(column_data)
+                        # Add the entries from the current page to the list
+                        all_entries.extend(column_data)
 
-                        # Now you can use the variable "Novedades" for further processing
-                        print(f"Concatenated Entries")
-                        print(Novedades)
+                # Concatenate all entries and save as a variable
+                Novedades_Regalias = "\n".join(all_entries)
 
+                # Now you can use the variable "Novedades_Regalias" for further processing
+                print("Concatenated Entries")
+                print(Novedades_Regalias)
             else:
                 print("No se pudo encontrar el link de Descarga del Estado. Particularmente no aparece la palabra 'Descargar'.")
 
@@ -88,7 +93,6 @@ if response.status_code == 200:
 else:
     print(f"Fue imposible abrir el link de la página web. Status code: {response.status_code}")
 
-"""
 # Open the PDF using PyMuPDF
 pdf_document = fitz.open("regalias.pdf")
 
@@ -128,7 +132,7 @@ print(f"\nEstado_ID: {Estado_ID}")
 print(f"DAY: {DAY}")
 print(f"MONTH: {MONTH}")
 print(f"YEAR: {YEAR}")
-print(f"\nNovedades:\n{Novedades}")
+print(f"\nNovedades:\n{Novedades_Regalias}")
 print(f"\nContraloría:\n{CONTRALORIA}")
 
 # Establish a connection to the MySQL server
@@ -167,7 +171,7 @@ try:
         print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos con la misma CONTRALORIA. No data inserted.")
     else:
         # Insertar data en MySQL table
-        data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2, CONTRALORIA)
+        data = (Estado_ID, DAY, MONTH, YEAR, Novedades_Regalias, newest_link2, CONTRALORIA)
         cursor.execute(insert_query, data)
         cnx.commit()
         print("Data inserted into MySQL successfully.")
@@ -198,8 +202,7 @@ logging.info("Estado_ID: %s", Estado_ID)
 logging.info("DAY: %s", DAY)
 logging.info("MONTH: %s", MONTH)
 logging.info("YEAR: %s", YEAR)
-logging.info("Novedades:\n%s", Novedades)
+logging.info("Novedades:\n%s", Novedades_Regalias)
 logging.info("Contraloría:\n%s", CONTRALORIA)
 logging.info("Data inserted into MySQL successfully.")
 logging.info("Script completed successfully.")
-"""
