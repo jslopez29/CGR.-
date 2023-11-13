@@ -7,9 +7,11 @@ import re
 import fitz
 import mysql.connector
 from mysql.connector import errorcode
+import pdfplumber
+import io
 
 
-# UNIDAD DE RESPONSABILIDAD FISCAL DE REGALIAS
+# UNIDAD RESPONSABILIDAD FISCAL REGALÍAS
 CONTRALORIA = 2
 url = 'https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'}
@@ -28,7 +30,7 @@ if response.status_code == 200:
     # Extract the href attribute from the selected link
     if selected_link:
         newest_link = selected_link.get('href')
-        print("\nEl Estado más reeciente es el siguiente:", newest_link)
+        print("\nEl Estado más reciente es el siguiente:", newest_link)
 
         # Now, you can open this link using a web browser or perform further actions
 
@@ -48,53 +50,32 @@ if response.status_code == 200:
                 # Make the link an absolute URL by combining it with the base URL
                 newest_link2 = urljoin(url, selected_link2.get('href'))
                 print("\nEl link de descarga del Estado más reciente es este:", newest_link2)
-                    # Download the PDF file
+                # Download the PDF file
                 pdf_response = requests.get(newest_link2, headers=HEADERS)
-                with open("downloaded_file.pdf", "wb") as pdf_file:
+
+                # Save the PDF content to a file
+                with open('regalias.pdf', 'wb') as pdf_file:
                     pdf_file.write(pdf_response.content)
 
-                # Now, use camelot to extract tables from the PDF
-                tables = camelot.read_pdf("downloaded_file.pdf", flavor='stream', pages='all')
-                
-                # Print a custom title
-                print("\nLos procesos que reportan novedad en el Estado más reciente son:")
-                
-                # Initialize Novedades variable outside the loop
-                Novedades = ""
+                # Open the saved PDF file with pdfplumber
+                with pdfplumber.open('regalias.pdf') as pdf:
+                    # Iterate through all pages
+                    for page_number in range(len(pdf.pages)):
+                        # Extract the table from the current page
+                        page = pdf.pages[page_number]
+                        table = page.extract_table()
 
-                # Iterate through tables and print specific content
-                for idx, table in enumerate(tables):
-                    # Assuming the column you're interested in is the first column
-                    specific_column = table.df.iloc[:, 1]
+                        # Extract a specific column (modify column_index as needed)
+                        column_index = 1
+                        column_data = [row[column_index].replace('\n', '') for row in table if row and row[column_index] and row[column_index].startswith("P")]
 
-                    # Concatenate the text from each row in the column
-                    condensed_content = ''
-                    current_entry = ''
-                    for entry in specific_column.dropna():
-                        if 'PRF' in entry:
-                            if current_entry:
-                                # Remove extra spaces before or after the numbers
-                                condensed_content += ' '.join(current_entry.split()).strip() + '\n'
-                            current_entry = entry
-                        else:
-                            current_entry += ' ' + entry
+                        # Concatenate the entries and save as a variable
+                        Novedades = "\n".join(column_data)
 
-                    # Add the last entry after the loop
-                    if current_entry:
-                        # Remove extra spaces before or after the numbers
-                        condensed_content += ' '.join(current_entry.split()).strip() + '\n'
+                        # Now you can use the variable "Novedades" for further processing
+                        print(f"Concatenated Entries")
+                        print(Novedades)
 
-                    # Remove lines containing "IDENTIFICACIÓN"
-                    condensed_content = '\n'.join(line for line in condensed_content.split('\n') if 'IDENTIFICACIÓN' not in line)
-
-                    # Accumulate the condensed content for the current table into Novedades
-                    if condensed_content:
-                        # Remove spaces but keep line breaks
-                        condensed_content = condensed_content.replace(' ', '').strip()
-                        Novedades += condensed_content + "\n"
-                    else:
-                        Novedades += "No relevant entries found.\n"
-                # Now, you can open this link using a web browser or perform further actions
             else:
                 print("No se pudo encontrar el link de Descarga del Estado. Particularmente no aparece la palabra 'Descargar'.")
 
@@ -106,8 +87,10 @@ if response.status_code == 200:
 
 else:
     print(f"Fue imposible abrir el link de la página web. Status code: {response.status_code}")
+
+"""
 # Open the PDF using PyMuPDF
-pdf_document = fitz.open("downloaded_file.pdf")
+pdf_document = fitz.open("regalias.pdf")
 
 # Extract the first line containing the word "ESTADO" from the entire PDF
 original_pdf_text = ""
@@ -135,7 +118,6 @@ if match:
 
         YEAR = match_info.group(5)
 
-        
     else:
         print("Failed to extract information from the matched line.")
 else:
@@ -147,6 +129,7 @@ print(f"DAY: {DAY}")
 print(f"MONTH: {MONTH}")
 print(f"YEAR: {YEAR}")
 print(f"\nNovedades:\n{Novedades}")
+print(f"\nContraloría:\n{CONTRALORIA}")
 
 # Establish a connection to the MySQL server
 try:
@@ -176,15 +159,15 @@ try:
                     "VALUES (%s, %s, %s, %s, %s, %s, %s)")
 
     # Chequear si Estado_ID ya exista en la base de datos
-    check_query = ("SELECT COUNT(*) FROM NovedadesCGR WHERE Estado_ID = %s")
-    cursor.execute(check_query, (Estado_ID,))
+    check_query = ("SELECT COUNT(*) FROM NovedadesCGR WHERE Estado_ID = %s AND CONTRALORIA = %s")
+    cursor.execute(check_query, (Estado_ID, CONTRALORIA))
     result = cursor.fetchone()
 
     if result and result[0] > 0:
-        print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos. No data inserted.")
+        print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos con la misma CONTRALORIA. No data inserted.")
     else:
         # Insertar data en MySQL table
-        data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2, CONTRALORIA)  # Include CONTRALORIA in the data
+        data = (Estado_ID, DAY, MONTH, YEAR, Novedades, newest_link2, CONTRALORIA)
         cursor.execute(insert_query, data)
         cnx.commit()
         print("Data inserted into MySQL successfully.")
@@ -216,5 +199,7 @@ logging.info("DAY: %s", DAY)
 logging.info("MONTH: %s", MONTH)
 logging.info("YEAR: %s", YEAR)
 logging.info("Novedades:\n%s", Novedades)
+logging.info("Contraloría:\n%s", CONTRALORIA)
 logging.info("Data inserted into MySQL successfully.")
 logging.info("Script completed successfully.")
+"""
