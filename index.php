@@ -8,6 +8,7 @@
 <body>
 
 <?php
+// Reemplace con sus credenciales reales de la base de datos
 require_once 'config/config.php';
 
 // Función para obtener el nombre del mes en español
@@ -18,6 +19,9 @@ function getSpanishMonthName($numeroMes) {
     ];
     return $nombresMes[$numeroMes - 1]; // Ajustar el índice ya que los meses son 1-based
 }
+
+// Mostrar el descargo de responsabilidad
+echo "<p>El reporte de Estados inicia desde el viernes 10 de noviembre de 2023</p>";
 
 try {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -40,6 +44,11 @@ try {
         $novedadesFormateadas = nl2br($row['Novedades']);
         echo $novedadesFormateadas;
         
+        echo "<br>";
+
+        // Agregar el enlace "Consultar Estado" con el link de la entrada en la base de datos
+        echo "<a href='{$row['Link']}' target='_blank'>Consultar Estado</a>";
+        
         echo "<br><br>"; // Agregar un salto de línea adicional después de cada entrada
     }
 
@@ -59,6 +68,11 @@ try {
         // Utilice nl2br para reemplazar saltos de línea con etiquetas <br>
         $novedadesFormateadas = nl2br($row['Novedades']);
         echo $novedadesFormateadas;
+        
+        echo "<br>";
+
+        // Agregar el enlace "Consultar Estado" con el link de la entrada en la base de datos
+        echo "<a href='{$row['Link']}' target='_blank'>Consultar Estado</a>";
         
         echo "<br><br>"; // Agregar un salto de línea adicional después de cada entrada
     }
