@@ -12,7 +12,7 @@ import pdfplumber
 
 # Unidad Investigaciones Especiales Contra la Corrupción
 CONTRALORIA = 1
-url = 'https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-responsabilidad-fiscal-de-regalias'
+url = 'https://www.contraloria.gov.co/resultados/notificaciones-y-citaciones/notificaciones-por-estado/unidad-de-investigaciones-especiales-contra-la-corrupcion'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'}
 
 # Send a GET request to the URL
@@ -28,13 +28,13 @@ if response.status_code == 200:
 
     # Extract the href attribute from the selected link
     if selected_link:
-        newest_link = selected_link.get('href')
-        print("\nEl Estado más reeciente es el siguiente:", newest_link)
+        newest_link_corrupcion = selected_link.get('href')
+        print("\nEl Estado más reciente es el siguiente:", newest_link_corrupcion)
 
         # Now, you can open this link using a web browser or perform further actions
 
         # Make a second request using a different variable
-        response2 = requests.get(newest_link, headers=HEADERS)
+        response2 = requests.get(newest_link_corrupcion, headers=HEADERS)
 
         # Check if the request was successful (status code 200)
         if response2.status_code == 200:
@@ -47,10 +47,10 @@ if response.status_code == 200:
             # Extract the href attribute from the selected link on the second page
             if selected_link2:
                 # Make the link an absolute URL by combining it with the base URL
-                newest_link2 = urljoin(url, selected_link2.get('href'))
-                print("\nEl link de descarga del Estado más reciente es este:", newest_link2)
+                newest_link2_corrupcion = urljoin(url, selected_link2.get('href'))
+                print("\nEl link de descarga del Estado más reciente es este:", newest_link2_corrupcion)
                 # Download the PDF file
-                pdf_response = requests.get(newest_link2, headers=HEADERS)
+                pdf_response = requests.get(newest_link2_corrupcion, headers=HEADERS)
                 with pdfplumber.open('corrupcion.pdf') as pdf:
                     # Initialize an empty list to store entries from all pages
                     all_entries = []
@@ -168,7 +168,7 @@ try:
         print(f"Este Estado_ID ({Estado_ID}) ya existe en la base de datos con la misma CONTRALORIA. No data inserted.")
     else:
         # Insertar data en MySQL table
-        data = (Estado_ID, DAY, MONTH, YEAR, Novedades_Corrupcion, newest_link2, CONTRALORIA)
+        data = (Estado_ID, DAY, MONTH, YEAR, Novedades_Corrupcion, newest_link2_corrupcion, CONTRALORIA)
         cursor.execute(insert_query, data)
         cnx.commit()
         print("Data inserted into MySQL successfully.")
@@ -192,8 +192,8 @@ finally:
 
 # Configure the logging module
 logging.basicConfig(filename='script_log.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logging.info("El Estado más reciente es el siguiente: %s", newest_link)
-logging.info("El link de descarga del Estado más reciente es este: %s", newest_link2)
+logging.info("El Estado más reciente es el siguiente: %s", newest_link_corrupcion)
+logging.info("El link de descarga del Estado más reciente es este: %s", newest_link2_corrupcion)
 logging.info("Los procesos que reportan novedad en el Estado más reciente son:")
 logging.info("Estado_ID: %s", Estado_ID)
 logging.info("DAY: %s", DAY)
@@ -203,3 +203,4 @@ logging.info("Novedades:\n%s", Novedades_Corrupcion)
 logging.info("Contraloría:\n%s", CONTRALORIA)
 logging.info("Data inserted into MySQL successfully.")
 logging.info("Script completed successfully.")
+globals().clear()
